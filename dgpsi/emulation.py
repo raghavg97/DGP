@@ -347,7 +347,7 @@ class emulator:
             else:
                 mu=np.mean(likelihood_mean,axis=0)
                 sigma2=np.mean((np.square(likelihood_mean)+likelihood_variance),axis=0)-mu**2
-            return mu, sigma2
+            return mu, sigma2, likelihood_mean, likelihood_variance
 
     def nllik(self,x,y):
         """Compute the negative predicted log-likelihood from a trained DGP model with likelihood layer.
